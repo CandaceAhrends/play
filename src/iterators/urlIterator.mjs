@@ -33,22 +33,3 @@ export const createUrlGetIterator = (urlList) => {
   };
   return AsynUrlIterator;
 };
-
-export const createUrlPostDBIterator = (urlList) => {
-  const AsynUrlIterator = {
-    requestList: [...urlList],
-    async *[Symbol.asyncIterator]() {
-      while (this.requestList.length) {
-        try {
-          const { url, key, data } = this.requestList.pop();
-          await axios.post(url, data);
-          await wait();
-          yield { success: true };
-        } catch (error) {
-          yield { success: false };
-        }
-      }
-    },
-  };
-  return AsynUrlIterator;
-};
