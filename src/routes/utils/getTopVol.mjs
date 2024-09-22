@@ -1,5 +1,5 @@
 import { sortByVolume } from './common.mjs';
-const LIMIT = 100;
+const LIMIT = 3;
 const excludedList = ['QQQ', 'TQQQ', 'SQQQ', 'SPY', 'SOXL', 'BAC'];
 
 export const getTopVol = (results) => {

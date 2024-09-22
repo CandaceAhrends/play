@@ -10,8 +10,8 @@ export const getGreenEmaStackStocks = (collection) => {
     return acc;
   }, new Map());
 
-  return [...emasByTicker.values()]
-    .filter((ema) => {
+  const list = [...emasByTicker.values()]
+    .map((ema) => {
       try {
         const ticker = ema[0].ticker;
         const ema21 = Number.parseFloat(
@@ -31,4 +31,6 @@ export const getGreenEmaStackStocks = (collection) => {
       }
     })
     .filter((s) => s);
+
+  return list;
 };

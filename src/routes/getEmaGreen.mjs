@@ -4,6 +4,7 @@ import axios from 'axios';
 import { getDailyUrl } from '../api/urls.mjs';
 import { getLastTradingDate } from './utils/tradingDates.mjs';
 import { createUrlGetIterator } from '../iterators/urlIterator.mjs';
+import { getGreenEmaStackStocks } from './utils/emas.mjs';
 import {
   generateEmaIteratorList,
   getEmasFromIterator,

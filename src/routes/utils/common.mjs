@@ -9,15 +9,8 @@ export const sortByVolume = (a, b) => {
   return 0;
 };
 
-export const spinWheelBack = (idx, arr) => {
-  return (idx - 1) % arr.length;
-};
-
-export const spinWheelForward = (idx, arr) => {
-  return (idx + 1) % arr.length;
-};
 /*
-  Iterate an arr like a wheel and stops when the predicate fn returns true or when the wheel spins to exceed the len of the arr
+  Iterate an arr like a wheel and stop when the predicate fn returns true or when the wheel spins to exceed the len of the arr
 */
 export class WheelSpinner {
   static FWD = 'fwd';
